@@ -38,6 +38,21 @@ As of version 0.4, **injectr** doesn't create a full node.js context for you to
 use. Instead, it isolates your script in its own sandbox, allowing you to
 include mocks of only the bits that your script needs.
 
+## Configure for Babel ##
+
+Injectr optionally transpiles babel for `.js` and `.jsx` files.  Injectr
+automatically reads in `.injectrrc` in the root of your project.  For example,
+to enable babel transpilation within injectr, simply add `.injectrrc`:
+
+```json
+{
+  "babel": true,
+  "babelOptions": {}
+}
+```
+
+You will need to `npm install --save-dev babel-core` for this to work.
+
 ### CoffeeScript ###
 
 **injectr** compiles any *.coffee files for you, so you can test your
